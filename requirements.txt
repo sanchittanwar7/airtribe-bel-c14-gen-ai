@@ -12,3 +12,4 @@ langchain-anthropic
 beautifulsoup4
 pypdf
 langgraph
+langgraph-cli[inmem]
