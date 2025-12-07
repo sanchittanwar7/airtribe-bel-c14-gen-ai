@@ -13,3 +13,4 @@ beautifulsoup4
 pypdf
 langgraph
 langgraph-cli[inmem]
+mcp
