@@ -7,7 +7,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 messages = [
-    # {"role": "system", "content": "You are a helpful assistant that replies concisely."},
+    {"role": "system", "content": "You are a helpful assistant that replies concisely."},
     {"role": "user", "content": "Explain semantic search in two sentences."}
 ]
 
@@ -20,6 +20,9 @@ resp = client.chat.completions.create(
 
 # Inspect response
 print("Raw response: ", resp)
+print("--------------------------------")
 print("Finish reason :", resp.choices[0].finish_reason)
+print("--------------------------------")
 print("Content :", resp.choices[0].message.content)
+print("--------------------------------")
 print("Usage :", resp.usage)

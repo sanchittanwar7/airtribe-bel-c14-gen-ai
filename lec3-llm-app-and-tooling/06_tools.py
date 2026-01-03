@@ -143,17 +143,17 @@ def run_conversation(user_message):
         return response_message.content
 
 # Demo different queries
-print("=" * 70)
-print("DEMO 1: Weather Query")
-print("=" * 70)
-run_conversation("What's the weather like in Seattle?")
+# print("=" * 70)
+# print("DEMO 1: Weather Query")
+# print("=" * 70)
+# run_conversation("What's the weather like in Seattle?")
 
-print("\n" + "=" * 70)
+# print("\n" + "=" * 70)
 print("DEMO 2: Math Query")
 print("=" * 70)
 run_conversation("What is 234 * 567?")
 
-print("\n" + "=" * 70)
-print("DEMO 3: No Tool Needed")
-print("=" * 70)
-run_conversation("What is the capital of France?")
+# print("\n" + "=" * 70)
+# print("DEMO 3: No Tool Needed")
+# print("=" * 70)
+# run_conversation("What is the capital of France?")

@@ -14,7 +14,7 @@ response = client.chat.completions.create(
         {"role": "system", "content": "You are a data extraction assistant. Response must be in JSON format"},
         {"role": "user", "content": "Extract information: John Smith is 30 years old and works as a software engineer in Seattle."}
     ],
-    # response_format={"type": "json_object"}  # Forces JSON output
+    response_format={"type": "json_object"}  # Forces JSON output
 )
 
 try:
