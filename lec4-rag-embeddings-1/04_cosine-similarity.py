@@ -128,69 +128,69 @@ if __name__ == "__main__":
     print("DEMO 4: Semantic Search Example")
     print("="*70)
     
-    # # A mini knowledge base
-    # documents = [
-    #     "Python is a high-level programming language",
-    #     "Machine learning models can predict outcomes",
-    #     "The cat jumped over the fence",
-    #     "Data science involves statistics and programming",
-    #     "Basketball is played with five players per team"
-    # ]
-    
-    # query = "Tell me about programming languages"
-    
-    # print(f"\nQuery: '{query}'")
-    # print(f"\nSearching through {len(documents)} documents...\n")
-    
-    # # Get query embedding
-    # query_emb = get_embedding(query)
-    
-    # # Compare with each document
-    # results = []
-    # for doc in documents:
-    #     doc_emb = get_embedding(doc)
-    #     sim = cosine_similarity(query_emb, doc_emb)
-    #     results.append((doc, sim))
-    
-    # # Sort by similarity (highest first)
-    # results.sort(key=lambda x: x[1], reverse=True)
-    
-    # print("Results (ranked by relevance):")
-    # print("-" * 70)
-    # for i, (doc, score) in enumerate(results, 1):
-    #     stars = "★" * int(score * 10)
-    #     print(f"\n{i}. Score: {score:.4f} {stars}")
-    #     print(f"   {doc}")
-    
-    print("\n" + "="*70)
-    print("DEMO 5: Similarity Matrix (Visualizing Relationships)")
-    print("="*70)
-    
-    test_sentences = [
-        "dog",
-        "puppy", 
-        "cat",
-        "kitten",
-        "flying",
-        "aircraft"
+    # A mini knowledge base
+    documents = [
+        "Python is a high-level programming language",
+        "Machine learning models can predict outcomes",
+        "The cat jumped over the fence",
+        "Data science involves statistics and programming",
+        "Basketball is played with five players per team"
     ]
     
-    print("\nComputing similarity matrix for words...\n")
+    query = "Tell me about programming languages"
+    
+    print(f"\nQuery: '{query}'")
+    print(f"\nSearching through {len(documents)} documents...\n")
+    
+    # Get query embedding
+    query_emb = get_embedding(query)
+    
+    # Compare with each document
+    results = []
+    for doc in documents:
+        doc_emb = get_embedding(doc)
+        sim = cosine_similarity(query_emb, doc_emb)
+        results.append((doc, sim))
+    
+    # Sort by similarity (highest first)
+    results.sort(key=lambda x: x[1], reverse=True)
+    
+    print("Results (ranked by relevance):")
+    print("-" * 70)
+    for i, (doc, score) in enumerate(results, 1):
+        stars = "★" * int(score * 10)
+        print(f"\n{i}. Score: {score:.4f} {stars}")
+        print(f"   {doc}")
+    
+    # print("\n" + "="*70)
+    # print("DEMO 5: Similarity Matrix (Visualizing Relationships)")
+    # print("="*70)
+    
+    # test_sentences = [
+    #     "dog",
+    #     "puppy", 
+    #     "cat",
+    #     "kitten",
+    #     "flying",
+    #     "aircraft"
+    # ]
+    
+    # print("\nComputing similarity matrix for words...\n")
     
     # Generate all embeddings
-    embeddings = [get_embedding(s) for s in test_sentences]
+    # embeddings = [get_embedding(s) for s in test_sentences]
     
     # Print header
-    print(f"{'':10}", end="")
-    for s in test_sentences:
-        print(f"{s:>10}", end="")
-    print()
-    print("-" * 60)
+    # print(f"{'':10}", end="")
+    # for s in test_sentences:
+    #     print(f"{s:>10}", end="")
+    # print()
+    # print("-" * 60)
     
     # Print similarity matrix
-    for i, s1 in enumerate(test_sentences):
-        print(f"{s1:10}", end="")
-        for j, s2 in enumerate(test_sentences):
-            sim = cosine_similarity(embeddings[i], embeddings[j])
-            print(f"{sim:10.3f}", end="")
-        print()
+    # for i, s1 in enumerate(test_sentences):
+    #     print(f"{s1:10}", end="")
+    #     for j, s2 in enumerate(test_sentences):
+    #         sim = cosine_similarity(embeddings[i], embeddings[j])
+    #         print(f"{sim:10.3f}", end="")
+    #     print()
