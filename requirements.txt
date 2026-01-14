@@ -9,6 +9,8 @@ anthropic
 langchain
 langchain-openai
 langchain-anthropic
+langchain-community
+langchain-text-splitters
 beautifulsoup4
 pypdf
 langgraph

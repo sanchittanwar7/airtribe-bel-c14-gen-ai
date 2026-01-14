@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
-from langchain.output_parsers import PydanticOutputParser
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
 from typing import List
 import dotenv
@@ -26,18 +26,13 @@ prompt = ChatPromptTemplate.from_messages([
 
 model = ChatOpenAI(model="gpt-4o-mini", temperature=0, api_key=os.getenv("OPENAI_API_KEY"))
 
-chain = prompt | model
+chain = prompt | model | parser
 
 # Run it
 review = chain.invoke({
     "movie": "Inception",
     "format_instructions": parser.get_format_instructions()
 })
-
-print(review.usage_metadata)
-
-review = parser.parse(review.content)
-print(review)
 
 # review is now a Python object!
 # print(f"Title: {review.title}")
@@ -46,4 +41,4 @@ print(review)
 # print(f"Cons: {review.cons}")
 # print(f"Summary: {review.summary}")
 
-# print(parser.get_format_instructions())
+print(parser.get_format_instructions())
