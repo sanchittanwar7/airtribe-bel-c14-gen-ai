@@ -74,10 +74,10 @@ conditional_workflow.set_entry_point("retrieve")
 conditional_app = conditional_workflow.compile()
 
 # Test both paths
-# print("\n--- Test 1: With Context ---")
-# result1 = conditional_app.invoke({"question": "What is Python?"})
-# print(f"Answer: {result1['answer']}")
+print("\n--- Test 1: With Context ---")
+result1 = conditional_app.invoke({"question": "What is Python?"})
+print(f"Answer: {result1['answer']}")
 
 # print("\n--- Test 2: Without Context ---")
-result2 = conditional_app.invoke({"question": "What is quantum computing?"})
-print(f"Answer: {result2['answer']}")
+# result2 = conditional_app.invoke({"question": "What is quantum computing?"})
+# print(f"Answer: {result2['answer']}")

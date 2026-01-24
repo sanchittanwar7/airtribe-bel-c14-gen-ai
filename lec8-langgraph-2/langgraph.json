@@ -2,7 +2,7 @@
   "$schema": "https://langgra.ph/schema.json",
   "dependencies": ["."],
   "graphs": {
-    "agent": "./2_conditional_edge.py:conditional_app"
+    "agent": "./5_memory-in-graph.py:memory_app"
   },
   "env": "../.env",
   "image_distro": "wolfi"

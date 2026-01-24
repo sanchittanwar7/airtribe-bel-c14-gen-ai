@@ -6,7 +6,7 @@ requests
 python-dotenv
 chromadb
 anthropic
-langchain
+langchain==0.3
 langchain-openai
 langchain-anthropic
 langchain-community
